@@ -12,4 +12,16 @@ export default class Paddle extends Phaser.Sprite {
 
     this.game.stage.addChild(this)
   }
+
+  update () {
+   // this.game.debug.body(this)
+
+    this.x = this.game.input.x
+
+    if (this.x < 24) {
+      this.x = 24
+    } else if (this.x > this.game.width - 24) {
+      this.x = this.game.width - 24
+    }
+  }
 }
